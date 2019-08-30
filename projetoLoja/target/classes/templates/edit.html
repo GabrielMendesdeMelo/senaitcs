@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" style="background-color: black;">
+	<head>
+		<meta charset="UTF-8">
+		<title>Editar Produto</title>
+	</head>
+	<body>
+		<div align="center">
+			<h1 style="color: #00ff00;">Editar produto</h1>
+			<br/>
+			<form action="#" th:action="@{/save}" th:object="${product}" method="post">
+				<table border="0" cellpadding="10">
+					<tr>
+						<td style="color: #00ff00;">Produto id</td>
+						<td><input type="text" th:field="*{idproduto}"readonly="readonly" style="color: #00ff00;background-color: black; border: 2px solid #00ff00;"/>
+						</td>
+					</tr>
+					<tr>
+						<td style="color: #00ff00;">Nome produto</td>
+						<td><input type="text" th:field="*{nome}" style="color: #00ff00;background-color: black; border: 2px solid #00ff00;" /></td>
+					</tr>
+					<tr>
+						<td style="color: #00ff00;">Marca</td>
+						<td><input type="text" th:field="*{brand}" style="color: #00ff00;background-color: black; border: 2px solid #00ff00;"/></td>
+					</tr>
+					<tr>
+						<td style="color: #00ff00;">Made in</td>
+						<td><input type="text" th:field="*{madein}" style="color: #00ff00;background-color: black; border: 2px solid #00ff00;"/></td>
+					</tr>
+					<tr>
+						<td style="color: #00ff00;">Preco</td>
+						<td><input type="number" th:field="*{price}" style="color: #00ff00;background-color: black; border: 2px solid #00ff00;"/></td>
+					</tr>
+					<tr>
+						<td colspan="2"><button type="submit" style="color: #00ff00;background-color: black; border: 2px solid #00ff00;">Salvar</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html> 

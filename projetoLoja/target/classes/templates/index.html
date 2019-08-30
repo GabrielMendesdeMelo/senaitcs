@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" style="background-color: black;">
+	<head>
+		<meta charset="utf-8">
+		<title>Loja</title>
+	</head>
+	<body>
+		<div align="center">
+			<h1 style="color: #00ff00;">Lista de produtos</h1>
+			<a href="new_product" style="color: #00ff00;">CRIAR NOVO PRODUTO</a>
+			<br></br>
+			<table border="1" cellpadding="10" style=" background-color: black; border-color: #00ff00;">
+				<thead>
+					<tr>
+						<th style="color: #00ff00;">Produto id</th>
+						<th style="color: #00ff00;">Nome</th>
+						<th style="color: #00ff00;">Marca</th>
+						<th style="color: #00ff00;">Made in</th>
+						<th style="color: #00ff00;">Preço</th>
+						<th style="color: #00ff00;">Ações</th>
+					</tr>	
+				</thead>
+				<tbody>
+					<tr th:each="product: ${listProducts}" style="color: #00ff00;">
+						<td th:text="${product.idproduto}" style="color: #00ff00;">Produto id</td>
+						<td th:text="${product.nome}" style="color: #00ff00;">nome</td>
+						<td th:text="${product.brand}" style="color: #00ff00;">marca</td>
+						<td th:text="${product.madein}" style="color: #00ff00;">made in</td>
+						<td th:text="${product.price}" style="color: #00ff00;">Preco</td>
+						<td>
+							<a th:href="@{'/edit/' + ${product.idproduto}}" style="color: #00ff00;">Editar</a>
+							&nbsp;&nbsp;&nbsp;
+							<a th:href="@{'/delete/' + ${product.idproduto}}" style="color: #00ff00;">Deletar</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+	</body> 	  		
+</html> 
